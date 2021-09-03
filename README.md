@@ -9,3 +9,5 @@ Nesse projeto a ideia é criar cartas de pokemon que vão se enfrentar! Quem ser
 O primeiro jogador escohe 1 atiburo o segundo jogador escolhe o seu atributo, e a batalha é iniciada.
 
 Aparecendo um alert ou outra pagina mostrando o resultado, com um um botão de reinicio de partida;
+
+Projeto colaborativo!!
