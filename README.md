@@ -11,4 +11,7 @@ Cada jogador escohe 1 atibuto e a sua carta, e a batalha é iniciada, mostrando 
 
 Aparecendo um alert ou outra pagina mostrando o resultado, com um um botão de reinicio de partida;
 
-Projeto colaborativo!!
+
+Orientações aos participantes:
+ - depois de fazer o seu clone do projeto crie uma branch com seu nome e o nome do projeto!
+ - Faça o pullRequest e vamos colaborando e conversando de acordo com o andamento do projeto!
