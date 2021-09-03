@@ -1,0 +1,25 @@
+body {
+  background: url(./files/assets/background.jpg) fixed center ;
+}
+
+.box-header {
+  background-color: rgba(82, 82, 161, 0.39);
+}
+
+.box-header.card {
+  display: flex;
+  background-color: brown;
+}
+
+section.box-header{
+  display: flex;
+  background-color: burlywood;
+
+}
+
+.box-card {
+  background: rgb(228, 226, 186);
+  height: 100px;
+  width: 150px;
+  border-radius: 30px;
+}
