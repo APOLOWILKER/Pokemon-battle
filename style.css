@@ -1,6 +1,8 @@
 body {
-  background-image: url(./files/assets/pokemon-Background.jpg) ;
+  background: url(./files/assets/pokemon-Background.jpg) repeat-y top ;
 }
+
+/* header */
 
 .box-header {
   flex-direction: column-reverse;
@@ -18,20 +20,65 @@ header .img-pokemon {
 }
 
 .card img{
-  height: 80px;
-  max-width: 60px;
-}
-
-
-section.box-header{
-  display: flex;
-  background-color: burlywood;
-
-}
-
-.box-card {
-  background: rgb(228, 226, 186);
   height: 100px;
-  width: 150px;
-  border-radius: 30px;
+  max-width: 80px;
+}
+
+/* selecionando o status */
+
+section.container-stats-names {
+  margin: 30px;
+}
+
+.container-text h3 {
+  font-size: 30px;
+  margin: 10px auto 10px auto;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.select-satats {
+  display: flex;
+  justify-content: center;
+  flex-grow: 2;
+}
+
+.space-satates {
+  margin: 0 3px;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.name-stats {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* manipulando cartas */
+
+main.container-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.box-card {
+  background-image: linear-gradient( to bottom left, rgb(167, 96, 189), rgb(99, 91, 91));
+  box-sizing: content-box;
+  height: 285px;
+  width: 200px;
+  margin: 0 15px;
+  border: 5px groove rgb(189, 160, 20);
+  border-radius: 8px;
+}
+
+.size {
+  font-size: 25px;
+  text-align: center;
+  padding: 2px;
+}
+
+div .container-states-values {
+  display: flex;
+  flex-wrap: wrap;
 }

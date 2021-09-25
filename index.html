@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,69 +12,100 @@
 <body>
   <header class="box-header">
     <ul class="img-pokemon">
-      <li class="card"><img class="first-pokemon" src="" alt="blastoise-card"></li>
-      <li class="card"><img src="./files/assets/charizard-card.png" alt="charizard-card"></li>
-      <li class="card"><img src="./files/assets/gengar-card-removebg-preview.png" alt="gengar-card"></li>
-      <li class="card"><img src="./files/assets/venussar-removebg-preview.png" alt=""></li>
+      <li class="card">
+        <img class="first-pokemon" src="" alt="blastoise-card">
+      </li>
+      <li class="card">
+        <img class="second-pokemon"src="" alt="charizard-card">
+      </li>
+      <li class="card">
+        <img class="third-pokemon" src="" alt="gengar-card">
+      </li>
+      <li class="card">
+        <img class="fourth-pokemon" src="" alt="">
+      </li>
     </ul>
   </header>
-  <h3>Escolha seu atributo</h3>
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <button>jogador 1</button>
-  <h3>Escolha seu atributo</h3>
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <button>jogador 2</button>
 
+<section class="container-stats-names">
+  <div class="container-text">
+    <h3>Escolha o seu atributo</h3>
+  </div>
 
-  <section>
-    <div class="box-card">
-      <div>
-        <h2>POKEMON NAME</h2>
-      </div>
-      <div>
-        <h3>Attack</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Deffense</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Life</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Energy</h3>
-        <p></p>
-      </div>
+  <div class="select-satats">
+    <label class="space-satates" for="">
+      <input type="radio" name="stats-pokemon" >  HP
+    </label>
+    <label class="space-satates" for="">
+      <input type="radio" name="stats-pokemon" >  Attack
+    </label>
+    <label class="space-satates" for="">
+      <input type="radio" name="stats-pokemon" > Defense
+    </label>
+    <label class="space-satates" for="">
+      <input type="radio" name="stats-pokemon" > Speed
+    </label>
+  </div>
+</section>
+
+<main class="container-cards">
+  <section class="box-card">
+    <div>
+      <h2 class="size">bulbassauro</h2>
     </div>
-  </section> 
-
-  <section>
-    <div class="box-card">
+    <div class="container-img">
+      <img src="" alt="">
+    </div>
+        <!-- stats é o objeto da API - posso usar base_stat: "", name: "hp" / attack/ defense / speed -->
+    <div class="container-states-values">
       <div>
-        <h2>POKEMON NAME</h2>
+      <h3>HP:</h3>
+      <p></p>
       </div>
       <div>
-        <h3>Attack</h3>
+        <h3>Attack:</h3>
+        <p></p>
       </div>
       <div>
-        <h3>Deffense</h3>
+        <h3>Defense:</h3>
+        <p></p>
       </div>
       <div>
-        <h3>Life</h3>
-      </div>
-      <div>
-        <h3>Energy</h3>
+        <h3>Speed:</h3>
+        <p></p>
       </div>
     </div>
   </section>
+
+  <section class="box-card">
+    <div>
+      <h2 class="size">onix</h2>
+    </div>
+    <div class="container-img">
+      <img src="" alt="">
+    </div>
+        <!-- stats é o objeto da API - posso usar base_stat: "", name: "hp" / attack/ defense / speed -->
+    <div class="container-states-values">
+      <div>
+      <h3>HP:</h3>
+      <p></p>
+      </div>
+      <div>
+        <h3>Attack:</h3>
+        <p></p>
+      </div>
+      <div>
+        <h3>Defense:</h3>
+        <p></p>
+      </div>
+      <div>
+        <h3>Speed:</h3>
+        <p></p>
+      </div>
+    </div>
+  </section>
+</main>
+
   <script src="script.js"></script>
 </body>
 </html>
