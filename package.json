@@ -1,0 +1,23 @@
+{
+  "name": "Pokemon-battle",
+  "version": "1.0.0",
+  "description": "Recriando uma batalha pokemon com CSS e HTML Projeto com finalidade de estudo dos conteudos aprendidos na TRYBE.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/APOLOWILKER/Pokemon-battle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/APOLOWILKER/Pokemon-battle/issues"
+  },
+  "homepage": "https://github.com/APOLOWILKER/Pokemon-battle#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.5"
+  }
+}

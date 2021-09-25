@@ -1,15 +1,27 @@
 body {
-  background: url(./files/assets/background.jpg) fixed center ;
+  background-image: url(./files/assets/pokemon-Background.jpg) ;
 }
 
 .box-header {
+  flex-direction: column-reverse;
   background-color: rgba(82, 82, 161, 0.39);
 }
 
-.box-header.card {
-  display: flex;
-  background-color: brown;
+li {
+  list-style: none;
 }
+
+header .img-pokemon {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.card img{
+  height: 80px;
+  max-width: 60px;
+}
+
 
 section.box-header{
   display: flex;
