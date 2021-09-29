@@ -5,14 +5,18 @@ const fourthPokemon = document.querySelector('.fourth-pokemon');
 const selectPokemon = document.querySelectorAll('.Pokemon');
 const mainCards = document.querySelector('.container-cards');
 const buttonBattle = document.querySelector('.button-style');
-document.querySelectorAll('.box-card')[0].classList.add('remove-card');
-document.querySelectorAll('.box-card')[1].classList.add('remove-card');
+// document.querySelectorAll('.box-card')[0].classList.add('remove-card');
+// document.querySelectorAll('.box-card')[1].classList.add('remove-card');
 const namePokemon = document.querySelectorAll('h2');
 const imgPokemon = document.querySelectorAll('img');
 const valueHP = document.querySelectorAll('#HP');
 const valueAttack = document.querySelectorAll('#ATK');
 const valueDefense = document.querySelectorAll('#DFense')
 const valueSpeed = document.querySelectorAll('#speed');
+const selecAtributeHP = document.querySelector('#hp-selected');
+const selecAtributeAtk = document.querySelector('#attack-selected');
+const selectAtributeDefense = document.querySelector('#defense-selected');
+const selectAtributeSpeed = document.querySelector('#speed-selected');
 
 
 const URL_Fetch_Api =  async (pokemon) => { 
@@ -47,6 +51,7 @@ return arra;
 // }
 
 // createCart();
+
 
 async function generateRandomPokemons() {
   const api = await URL_Fetch_Api(generateRandomNumber());
@@ -102,13 +107,33 @@ async function randomCardMachine() {
   valueDefense[1].innerText = pokemonMachine.stats[2].base_stat;
   valueSpeed[1].innerText = pokemonMachine.stats[5].base_stat;
 }
+let player = '';
+let machine = '';
 
-function chosenAtribute() {
-  
+function resultBattle(player, machine) {
+  if (player > machine) {
+    alert('testou');
+  // const draw = document.createElement('div');
+  // draw.className = 'resultDraw'
+  // draw.style.position = 'absolut';
+}
+  // player.innerText > machine.innerText
+  // player.innerText < machine.innerText
 }
 
-function resultBattle() {
-
+function chosenAtribute() {
+  selecAtributeHP.addEventListener('click', () => {
+    valueHP[0].className = 'select1';
+    valueHP[1].className = 'select2';
+    console.log('oi');
+    player = valueHP[0].innerText;
+    machine = valueHP[1].innerText; 
+  });
+  selecAtributeAtk.addEventListener('click', resultBattle);
+  selectAtributeDefense.addEventListener('click', resultBattle);
+  selectAtributeSpeed.addEventListener('click', () => {
+    console.log('teste');
+  });
 }
 
 async function startBattle() {
@@ -116,7 +141,6 @@ async function startBattle() {
     sectionCards.forEach(element => element.classList.remove('remove-card'));
   chosenAtribute();
   randomCardMachine();
-  resultBattle();
 }
 
 buttonBattle.addEventListener('click', startBattle);
