@@ -20,8 +20,8 @@ header .img-pokemon {
 }
 
 .card img{
-  height: 100px;
-  max-width: 80px;
+  height: 75px;
+  width: 80px;
 }
 
 /* selecionando o status */
@@ -35,16 +35,22 @@ section.container-stats-names {
   margin: 10px auto 10px auto;
   text-align: center;
   font-weight: bolder;
+  color: aliceblue;
+  text-shadow: -3px 3px 5px black;
 }
 
 .select-satats {
   display: flex;
   justify-content: center;
   flex-grow: 2;
+  font-size: 18px;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  text-shadow: -3px 3px 5px rgb(216, 212, 212);
 }
 
-.space-satates {
-  margin: 0 3px;
+label.space-satates {
+  margin: 0 70px;
   font-size: medium;
   font-weight: bolder;
 }
@@ -63,22 +69,89 @@ main.container-cards {
 }
 
 section.box-card {
-  background-image: linear-gradient( to bottom left, rgb(167, 96, 189), rgb(99, 91, 91));
+  background-image: linear-gradient( to bottom left, rgb(167, 96, 189), rgb(101, 96, 131));
   box-sizing: content-box;
-  height: 285px;
-  width: 200px;
+  height: 250px;
+  width: 160px;
   margin: 0 15px;
   border: 5px groove rgb(189, 160, 20);
   border-radius: 8px;
 }
 
-.size {
-  font-size: 25px;
-  text-align: center;
-  padding: 2px;
+.remove-card {
+  display: none;
 }
 
-div .container-states-values {
-  display: flex;
-  flex-wrap: wrap;
+.size {
+  font-size: 22px;
+  text-align: center;
+  padding: 2px;
+  color: aliceblue;
+  text-shadow: -3px 3px 5px black;
 }
+
+/* imagen */
+
+.container-img {
+  background-color: honeydew;
+  height: 105px;
+  width: 135px;
+  display: flex;
+  justify-content: space-around;
+  margin: 8px 10px;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 3px 3px 15px black;
+}
+
+.container-img img {
+  height: 95px;
+  width: 95px;
+}
+
+
+/* states values */
+
+div.container-stats-values {
+  display: flex;
+  margin: 8px 6px;
+  padding: 3px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: rgba(31, 31, 28, 0.932);
+  color: aliceblue;
+  text-shadow: -3px 3px 5px black;
+}
+
+.style-name-Value {
+  text-align: center;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.style-Value {
+  background-color: burlywood;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 16px;
+  margin: 3px;
+}
+ /* button */
+
+.move-button {
+  display: flex;
+  margin: 10px 1px 0 1px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-style {
+  padding: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(157, 68, 230, 0.932);;
+  font-weight: bolder;
+  font-size: 16px;
+}
+

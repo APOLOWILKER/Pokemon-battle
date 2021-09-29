@@ -13,36 +13,35 @@
   <header class="box-header">
     <ul class="img-pokemon">
       <li class="card">
-        <img class="first-pokemon" src="" alt="blastoise-card">
+        <img class="first-pokemon Pokemon" src="" alt="blastoise-card">
       </li>
       <li class="card">
-        <img class="second-pokemon"src="" alt="charizard-card">
+        <img class="second-pokemon Pokemon"src="" alt="charizard-card">
       </li>
       <li class="card">
-        <img class="third-pokemon" src="" alt="gengar-card">
+        <img class="third-pokemon Pokemon" src="" alt="gengar-card">
       </li>
       <li class="card">
-        <img class="fourth-pokemon" src="" alt="">
+        <img class="fourth-pokemon Pokemon" src="" alt="">
       </li>
     </ul>
   </header>
 
 <section class="container-stats-names">
   <div class="container-text">
-    <h3>Escolha o seu atributo</h3>
+    <h3 class="size">Escolha o seu atributo</h3>
   </div>
-
   <div class="select-satats">
-    <label class="space-satates" for="">
+    <label class="space-states" for="">
       <input type="radio" name="stats-pokemon" >  HP
     </label>
-    <label class="space-satates" for="">
+    <label class="space-states" for="">
       <input type="radio" name="stats-pokemon" >  Attack
     </label>
-    <label class="space-satates" for="">
+    <label class="space-states" for="">
       <input type="radio" name="stats-pokemon" > Defense
     </label>
-    <label class="space-satates" for="">
+    <label class="space-states" for="">
       <input type="radio" name="stats-pokemon" > Speed
     </label>
   </div>
@@ -51,60 +50,63 @@
 <main class="container-cards">
   <section class="box-card">
     <div>
-      <h2 class="size">bulbassauro</h2>
+      <h2 class="size">Gengar</h2>
     </div>
     <div class="container-img">
-      <img src="" alt="">
+      <img src="./files/assets/gengar-card-removebg-preview.png" alt="">
     </div>
         <!-- stats é o objeto da API - posso usar base_stat: "", name: "hp" / attack/ defense / speed -->
-    <div class="container-states-values">
+    <div class="container-stats-values">
       <div>
-      <h3>HP:</h3>
-      <p></p>
+        <h3 class="style-name-Value">HP 
+          <p id="HP" class="style-Value">222</p> 
+        </h3> 
+        <h3 class="style-name-Value">Attack
+          <p id="ATK" class="attack-value-player style-Value">330</p>
+        </h3>     
       </div>
       <div>
-        <h3>Attack:</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Defense:</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Speed:</h3>
-        <p></p>
+        <h3 class="style-name-Value">Defense
+          <p id="DFense" class="style-Value style-Value">777</p>
+        </h3>
+        <h3 class="style-name-Value">Speed
+          <p id="speed" class="style-Value">888</p>
+        </h3>
       </div>
     </div>
   </section>
 
   <section class="box-card">
     <div>
-      <h2 class="size">onix</h2>
+      <h2 class="size">Blastoise</h2>
     </div>
     <div class="container-img">
-      <img src="" alt="">
+      <img src="./files/assets/blastoise-removido.png" alt="">
     </div>
         <!-- stats é o objeto da API - posso usar base_stat: "", name: "hp" / attack/ defense / speed -->
-    <div class="container-states-values">
+    <div class="container-stats-values">
       <div>
-      <h3>HP:</h3>
-      <p></p>
+        <h3 class="style-name-Value">HP 
+          <p id="HP" class="style-Value">222</p> 
+        </h3> 
+        <h3 class="style-name-Value">Attack
+          <p id="ATK" class="style-Value">330</p>
+        </h3>     
       </div>
       <div>
-        <h3>Attack:</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Defense:</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Speed:</h3>
-        <p></p>
+        <h3 class="defense-machine-pokemon style-name-Value">Defense
+          <p id="DFense" class="defense-value-machine style-Value style-Value">777</p>
+        </h3>
+        <h3 class="speed-machine-pokemon style-name-Value">Speed
+          <p id="speed" class="speed-value-machine style-Value">888</p>
+        </h3>
       </div>
     </div>
   </section>
 </main>
+<div class="move-button">
+  <button class="button-style">Start Battle</button>
+</div>
 
   <script src="script.js"></script>
 </body>
