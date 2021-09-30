@@ -291,7 +291,9 @@ div.container-stats-values {
 }
 
 #popout-container {
-  background-color: rgb(37, 38, 38);
+  /* background-color: rgb(37, 38, 38); */
+  background-image: linear-gradient( to bottom, rgb(255, 0, 0) 50%,  rgb(255, 255, 255) 50%);
+  /* border: 10px solid black; */
   border-radius: 50%;
   width: 300px;
   margin: 150px auto;
@@ -303,12 +305,21 @@ div.container-stats-values {
   box-shadow: 5px 5px 15px rgb(22, 22, 22);
   animation: go-back 1s infinite alternate;
   animation-fill-mode: forwards;
+  animation: popOut 1s forwards;
 }
 
 
+@keyframes popOut {
+  0% {
+    border: 1px solid rgba(37, 36, 39, 0.445);
+  } 100% {
+    border: 15px solid black;
+  }
+}
+
 #div-texto {  
-  color: rgb(247, 241, 241);
-  margin: 12% ;
+  color: rgb(3, 3, 3);
+  text-align: center;
   font-size: 30px;
   font-weight: bolder;
   font-family: 'Courier New', Courier, monospace;
