@@ -5,8 +5,6 @@ const fourthPokemon = document.querySelector('.fourth-pokemon');
 const selectPokemon = document.querySelectorAll('.Pokemon');
 const mainCards = document.querySelector('.container-cards');
 const buttonBattle = document.querySelector('.button-style');
-// document.querySelectorAll('.box-card')[0].classList.add('remove-card');
-// document.querySelectorAll('.box-card')[1].classList.add('remove-card');
 const namePokemon = document.querySelectorAll('h2');
 const imgPokemon = document.querySelectorAll('img');
 const valueHP = document.querySelectorAll('#HP');
@@ -18,7 +16,9 @@ const selecAtributeAtk = document.querySelector('#attack-selected');
 const selectAtributeDefense = document.querySelector('#defense-selected');
 const selectAtributeSpeed = document.querySelector('#speed-selected');
 const pokemonType = document.querySelectorAll('.types');
-const bannerResult = document.querySelector('.container-stats-names')
+const bannerResult = document.querySelector('.container-stats-names');
+const pointPlayer = document.querySelector('#player-point');
+const pointMachine = document.querySelector('#machine-point');
 
 function addSelectedClass(event) {
   const selected = document.querySelector('.selected');
@@ -50,8 +50,7 @@ generateRandomNumber = () => {
     result = Math.ceil(Math.random() * 200);
   }
   arra.push(result);
-  console.log(arra)
-return result;
+  return result;
 } 
 
 async function generateRandomPokemons() {
@@ -126,13 +125,19 @@ function resultBattle(player, machine, elementP, elementM) {
   p.className = 'result-text';
   div.appendChild(p);
     if (parseInt(player) > parseInt(machine)) {
-      div.className = 'result-win'
-      p.innerHTML = 'Player Ganhou'
+      div.className = 'result-win';
+      p.innerHTML = 'Player Ganhou';
+      pointPlayer.innerText = parseInt(pointPlayer.innerText) + 1;
+      sessionStorage.setItem('playerPoints', pointPlayer.innerText);
+      // sessionStorage.setItem('machinePoints', pointMachine.innerText);
       elementP.style.backgroundColor = 'green';
       elementM.style.backgroundColor = 'red';
   } else if (parseInt(player) < parseInt(machine)) {
-    div.className = 'result-lose'
-    p.innerHTML = 'Maquina Ganhou'
+    div.className = 'result-lose';
+    p.innerHTML = 'Maquina Ganhou';
+    pointMachine.innerText = parseInt(pointMachine.innerText) + 1;
+    sessionStorage.setItem('machinePoints', pointMachine.innerText);
+    // sessionStorage.setItem('playerPoints', pointPlayer.innerText);
     elementP.style.backgroundColor = 'red';
     elementM.style.backgroundColor = 'green';
   } else {
@@ -151,10 +156,26 @@ function resultBattle(player, machine, elementP, elementM) {
   });
 }
 
+function loadPoints() {
+  if (sessionStorage.getItem('playerPoints')) {
+    pointPlayer.innerText = sessionStorage.getItem('playerPoints');
+  }
+  if ( sessionStorage.getItem('machinePoints')) {
+    pointMachine.innerText = sessionStorage.getItem('machinePoints');
+  }
+}
+
+function createBlockDiv() {
+  const blockDiv = document.createElement('div');
+  blockDiv.className = 'block-div';
+  document.querySelector('body').insertBefore(blockDiv, document.querySelector('header'))
+}
+
 
 async function startBattle() {
   await randomCardMachine();
   const selected = document.querySelector('.selected');
+  createBlockDiv();
   if (selected) {
     if (selecAtributeHP.checked) {
       resultBattle(valueHP[0].innerText, valueHP[1].innerText, valueHP[0], valueHP[1]);
@@ -182,3 +203,7 @@ async function startBattle() {
 }
 
 buttonBattle.addEventListener('click', startBattle);
+
+window.onload = () => {
+  loadPoints();
+}
