@@ -1,79 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reset.css">
+  <link rel="shortcut icon" type="imagex/png" href="./files/assets/Pokeball-fivicon-pokemon-removebg-preview.png">
   <title>Pokemon Battle</title>
 </head>
 <body>
   <header class="box-header">
-    <ul>
-      <li class="card">x</li>
-      <li class="card">x</li>
-      <li class="card">x</li>
-      <li class="card">x</li>
+    <h3 class="size">Escolha seu Pokemon</h3>
+    <ul class="img-pokemon">
+      <li class="card">
+        <img class="first-pokemon Pokemon" src="" alt="blastoise-card">
+      </li>
+      <li class="card">
+        <img class="second-pokemon Pokemon"src="" alt="charizard-card">
+      </li>
+      <li class="card">
+        <img class="third-pokemon Pokemon" src="" alt="gengar-card">
+      </li>
+      <li class="card">
+        <img class="fourth-pokemon Pokemon" src="" alt="">
+      </li>
     </ul>
   </header>
-  <h3>Escolha seu atributo</h3>
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <button>jogador 1</button>
-  <h3>Escolha seu atributo</h3>
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <input type="radio" name="" id="">
-  <button>jogador 2</button>
 
+<section class="container-stats-names">
+  <div class="container-text">
+    <h3 class="size">Escolha seu Atributo</h3>
+  </div>
+  <div class="select-stats">
+    <label class="space-states" for="hp-selected">
+      <input id="hp-selected"type="radio" name="stats-pokemon" >  HP
+    </label>
+    <label class="space-states" for="attack-selected">
+      <input id="attack-selected" type="radio" name="stats-pokemon" >  Attack
+    </label>
+    <label class="space-states" for="defense-selected">
+      <input id="defense-selected" type="radio" name="stats-pokemon" > Defense
+    </label>
+    <label class="space-states" for="speed-selected">
+      <input id="speed-selected" type="radio" name="stats-pokemon" > Speed
+    </label>
+  </div>
+</section>
 
-  <section>
-    <div class="box-card">
-      <div>
-        <h2>POKEMON NAME</h2>
-      </div>
-      <div>
-        <h3>Attack</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Deffense</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Life</h3>
-        <p></p>
-      </div>
-      <div>
-        <h3>Energy</h3>
-        <p></p>
-      </div>
+<main class="container-cards">
+  <section class="box-card remove-card">
+    <div>
+      <h2 class="size-name-pokemon">Gengar</h2>
     </div>
-  </section> 
-
-  <section>
-    <div class="box-card">
+    <div class="container-img">
+      <img src="./files/assets/gengar-card-removebg-preview.png" alt="">
+    </div>
+        <!-- stats é o objeto da API - posso usar base_stat: "", name: "hp" / attack/ defense / speed -->
+        <div class="type-pokemon">
+          <p>Type:</p>
+          <p class="types">Ghost</p>
+        </div>
+    <div class="container-stats-values">
       <div>
-        <h2>POKEMON NAME</h2>
+        <h3 class="style-name-Value">HP 
+          <p id="HP" class="style-Value">222</p> 
+        </h3> 
+        <h3 class="style-name-Value">Attack
+          <p id="ATK" class="attack-value-player style-Value">330</p>
+        </h3>     
       </div>
       <div>
-        <h3>Attack</h3>
-      </div>
-      <div>
-        <h3>Deffense</h3>
-      </div>
-      <div>
-        <h3>Life</h3>
-      </div>
-      <div>
-        <h3>Energy</h3>
+        <h3 class="style-name-Value">Defense
+          <p id="DFense" class="style-Value style-Value">777</p>
+        </h3>
+        <h3 class="style-name-Value">Speed
+          <p id="speed" class="style-Value">888</p>
+        </h3>
       </div>
     </div>
   </section>
-  
+
+  <section class="box-card remove-card">
+    <div>
+      <h2 class="size-name-pokemon">Blastoise</h2>
+    </div>
+    <div class="container-img">
+      <img src="./files/assets/blastoise-removido.png" alt="">
+    </div>
+        <!-- stats é o objeto da API - posso usar base_stat: "", name: "hp" / attack/ defense / speed -->
+      <div class="type-pokemon">
+        <p>Type:</p>
+        <p class="types">Wather</p>
+      </div>
+    <div class="container-stats-values">
+      <div>
+        <h3 class="style-name-Value">HP 
+          <p id="HP" class="style-Value">222</p> 
+        </h3> 
+        <h3 class="style-name-Value">Attack
+          <p id="ATK" class="style-Value">330</p>
+        </h3>     
+      </div>
+      <div>
+        <h3 class="defense-machine-pokemon style-name-Value">Defense
+          <p id="DFense" class="defense-value-machine style-Value style-Value">777</p>
+        </h3>
+        <h3 class="speed-machine-pokemon style-name-Value">Speed
+          <p id="speed" class="speed-value-machine style-Value">888</p>
+        </h3>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="move-button">
+  <button class="button-style">Start Battle</button>
+</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
