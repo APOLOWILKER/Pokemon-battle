@@ -137,6 +137,7 @@ function resultBattle(player, machine) {
   const div = document.createElement('div');
   bannerResult.appendChild(div);
   const p = document.createElement('p');
+  p.className = 'result-text';
   div.appendChild(p);
     if (player > machine) {
       div.className = 'result-win'
@@ -152,7 +153,7 @@ function resultBattle(player, machine) {
   button.innerHTML = 'Restart Battle';
   button.className = 'button-style';
   div.appendChild(button);
-  buttonBattle.disabled = true;
+  buttonBattle.style.display = 'none';
   button.addEventListener('click', () => {
     window.location.reload();
   });
