@@ -19,8 +19,6 @@ const pokemonType = document.querySelectorAll('.types');
 const bannerResult = document.querySelector('.container-stats-names');
 const pointPlayer = document.querySelector('#player-point');
 const pointMachine = document.querySelector('#machine-point');
-const refreshPokemon = document.querySelector('#refresh');
-
 
 function addSelectedClass(event) {
   const selected = document.querySelector('.selected');
@@ -31,10 +29,6 @@ function addSelectedClass(event) {
     event.target.classList.add('selected');
   }
 }
-
-refreshPokemon.addEventListener('click', () => {
-    window.location.reload(false)
-});
 
 const makePopout = () => {
   const divMaior = document.createElement('div');
@@ -192,7 +186,6 @@ function resultBattle(player, machine, elementP, elementM) {
     elementP.style.backgroundColor = 'blue';
     elementM.style.backgroundColor = 'blue';
   }
-
   const button = document.createElement('button');
   button.innerHTML = 'Restart Battle';
   button.className = 'button-style';
