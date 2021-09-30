@@ -162,10 +162,17 @@ function resultBattle(player, machine) {
   });
 }
 
+function createBlockDiv() {
+  const blockDiv = document.createElement('div');
+  blockDiv.className = 'block-div';
+  document.querySelector('body').insertBefore(blockDiv, document.querySelector('header'))
+}
+
 
 async function startBattle() {
   await randomCardMachine();
   const selected = document.querySelector('.selected');
+  createBlockDiv();
   if (selected) {
     if (selecAtributeHP.checked) {
       resultBattle(valueHP[0].innerText, valueHP[1].innerText);
