@@ -45,6 +45,28 @@ header .img-pokemon {
   }
 }
 
+/* placar */
+
+.align-placar {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.style-placar {
+  font-family: 'Quantico', sans-serif;
+  color:chartreuse;
+  margin-top: 10px;
+  font-size: 30px;
+  text-shadow: 5px 5px 8px black;
+}
+
+.color-point {
+  color: aliceblue;
+}
+
 
 /* selecionando o status */
 
