@@ -52,13 +52,23 @@ section.container-stats-names {
   font-weight: bolder;
   color: rgb(0, 0, 0);
   text-shadow: -3px 3px 5px rgb(216, 212, 212);
+  transition: text-shadow 0.2s ease-in-out;
+}
+
+.select-satats:hover {
+  text-shadow: -3px 3px 5px rgb(216, 212, 212);
 }
 
 .space-states {
-  /* border: 3px solid red; */
   margin: 0 8px;
   font-size: 18px;
   font-weight: bolder;
+  transition: transform 0.6s ease-in-out;
+}
+
+.space-states:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .name-stats {
