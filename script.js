@@ -30,6 +30,46 @@ function addSelectedClass(event) {
   }
 }
 
+const makePopout = () => {
+  const divMaior = document.createElement('div');
+  const divContainer = document.createElement('div');
+  const divTexto = document.createElement('div');
+  divMaior.id = 'div-maior';
+  divContainer.id = 'popout-container';
+  divTexto.id = 'div-texto';
+  divTexto.innerText = 'Escolha um Pokemon!'
+  document.querySelector('body').append(divMaior);
+  divMaior.appendChild(divContainer);
+  divContainer.appendChild(divTexto);
+  divMaior.addEventListener('click', (e) => {
+    if (e.target.id ==='div-maior') {
+      divMaior.remove();
+      console.log(e.target);
+    }
+  })
+}
+
+const makePopout2 = () => {
+  const divMaior = document.createElement('div');
+  const divContainer = document.createElement('div');
+  const divTexto = document.createElement('div');
+  divMaior.id = 'div-maior';
+  divContainer.id = 'popout-container';
+  divTexto.id = 'div-texto';
+  divTexto.innerText = 'Escolha um Atributo!'
+  document.querySelector('body').append(divMaior);
+  divMaior.appendChild(divContainer);
+  divContainer.appendChild(divTexto);
+  divMaior.addEventListener('click', (e) => {
+    if (e.target.id ==='div-maior') {
+      divMaior.remove();
+      console.log(e.target);
+    }
+  })
+}
+
+
+
 firstPokemon.addEventListener('click', addSelectedClass);
 secondPokemon.addEventListener('click', addSelectedClass);
 thirdPokemon.addEventListener('click', addSelectedClass);
@@ -168,19 +208,19 @@ function loadPoints() {
 function createBlockDiv() {
   const blockDiv = document.createElement('div');
   blockDiv.className = 'block-div';
-  document.querySelector('body').insertBefore(blockDiv, document.querySelector('header'))
+  document.querySelector('body').insertBefore(blockDiv, document.querySelector('header'));
 }
 
 
 async function startBattle() {
   await randomCardMachine();
   const selected = document.querySelector('.selected');
-  createBlockDiv();
   if (selected) {
+    createBlockDiv();
     if (selecAtributeHP.checked) {
       resultBattle(valueHP[0].innerText, valueHP[1].innerText, valueHP[0], valueHP[1]);
       const sectionCards = document.querySelectorAll('.remove-card');
-    sectionCards.forEach(element => element.classList.remove('remove-card'));
+      sectionCards.forEach(element => element.classList.remove('remove-card'));
     }  else if (selecAtributeAtk.checked) {
       resultBattle(valueAttack[0].innerText, valueAttack[1].innerText, valueAttack[0], valueAttack[1]);
       const sectionCards = document.querySelectorAll('.remove-card');
@@ -189,15 +229,17 @@ async function startBattle() {
       resultBattle(valueDefense[0].innerText, valueDefense[1].innerText, valueDefense[0], valueDefense[1]);
       const sectionCards = document.querySelectorAll('.remove-card');
     sectionCards.forEach(element => element.classList.remove('remove-card'));
-    } else if (selectAtributeSpeed.checked) {
+  } else if (selectAtributeSpeed.checked) {
       resultBattle(valueSpeed[0].innerText, valueSpeed[1].innerText, valueSpeed[0], valueSpeed[1]);
       const sectionCards = document.querySelectorAll('.remove-card');
-    sectionCards.forEach(element => element.classList.remove('remove-card'));
+      sectionCards.forEach(element => element.classList.remove('remove-card'));
     }  else {
-      alert('Selecione um Atributo!');
+      makePopout2() 
+      // alert('Selecione um Atributo!');
     }
   } else {
-    alert('Selecione o POKEMON!')
+    makePopout()
+    // alert('Selecione o POKEMON!')
   }
   
 }

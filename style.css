@@ -276,3 +276,41 @@ div.container-stats-values {
   height: 145px;
   opacity: 0.5;
 }
+
+/* pop-out */
+
+#div-maior {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+#popout-container {
+  background-color: rgb(37, 38, 38);
+  border-radius: 50%;
+  width: 300px;
+  margin: 150px auto;
+  height: 300px;
+  padding:0px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 15px rgb(22, 22, 22);
+  animation: go-back 1s infinite alternate;
+  animation-fill-mode: forwards;
+}
+
+
+#div-texto {  
+  color: rgb(247, 241, 241);
+  margin: 12% ;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+}
+
