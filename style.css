@@ -181,6 +181,7 @@ div.container-stats-values {
   background-color: rgba(157, 68, 230, 0.932);;
   font-weight: bolder;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .result-win {
@@ -188,7 +189,7 @@ div.container-stats-values {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 150px;
+  height: 200px;
   width: 100%;
   background-color: rgba(15, 224, 61, 0.5);  
 }
@@ -211,4 +212,13 @@ div.container-stats-values {
   height: 150px;
   width: 100%;
   background-color: rgba(82, 82, 161, 0.39);  
+}
+
+.result-text {
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  padding: 2px;
+  color: aliceblue;
+  text-shadow: -3px 3px 5px black;
 }
