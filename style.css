@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap');
+
 body {
   background: url(./files/assets/pokemon-Background.jpg) repeat-y top ;
 }
-
 /* header */
 
 .box-header {
@@ -43,6 +44,29 @@ header .img-pokemon {
   } 100% {
     border: 10px solid rgb(18, 167, 50);
   }
+}
+
+
+/* placar */
+
+.align-placar {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.style-placar {
+  font-family: 'Quantico', sans-serif;
+  color:chartreuse;
+  margin-top: 10px;
+  font-size: 30px;
+  text-shadow: 5px 5px 8px black;
+}
+
+.color-point {
+  color: aliceblue;
 }
 
 
