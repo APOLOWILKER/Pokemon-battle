@@ -28,6 +28,11 @@ header .img-pokemon {
 
 section.container-stats-names {
   margin: 30px;
+  height: 100px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container-text h3 {
@@ -71,8 +76,8 @@ main.container-cards {
 section.box-card {
   background-image: linear-gradient( to bottom left, rgb(167, 96, 189), rgb(101, 96, 131));
   box-sizing: content-box;
-  height: 250px;
-  width: 160px;
+  height: 270px;
+  width: 175px;
   margin: 0 15px;
   border: 5px groove rgb(189, 160, 20);
   border-radius: 8px;
@@ -108,6 +113,17 @@ section.box-card {
   height: 95px;
   width: 95px;
 }
+
+
+/*tipo de pokemon*/
+
+.type-pokemon {
+  display: flex;
+  font-size: small;
+  justify-content: center;
+  color: aliceblue;
+}
+
 
 
 /* states values */

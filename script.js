@@ -17,6 +17,8 @@ const selecAtributeHP = document.querySelector('#hp-selected');
 const selecAtributeAtk = document.querySelector('#attack-selected');
 const selectAtributeDefense = document.querySelector('#defense-selected');
 const selectAtributeSpeed = document.querySelector('#speed-selected');
+const pokemonType = document.querySelectorAll('.types');
+const bannerResult = document.querySelector('.container-stats-names')
 
 
 const URL_Fetch_Api =  async (pokemon) => { 
@@ -51,7 +53,7 @@ return arra;
 // }
 
 // createCart();
-
+// api.types.type.name
 
 async function generateRandomPokemons() {
   const api = await URL_Fetch_Api(generateRandomNumber());
@@ -59,6 +61,7 @@ async function generateRandomPokemons() {
   firstPokemon.addEventListener('click',  () => {
     namePokemon[0].innerText = api.forms[0].name.toUpperCase()
     imgPokemon[4].src = api.sprites.other['official-artwork'].front_default;
+    pokemonType[0].innerText = (api.types[0] && api.types[1]) ? `${api.types[0].type.name} / ${api.types[1].type.name}`.toLocaleUpperCase() : api.types[0].type.name.toLocaleUpperCase();
     valueHP[0].innerText = api.stats[0].base_stat;
     valueAttack[0].innerText = api.stats[1].base_stat;
     valueDefense[0].innerText = api.stats[2].base_stat;
@@ -69,6 +72,7 @@ async function generateRandomPokemons() {
   secondPokemon.addEventListener('click',  () => {
     namePokemon[0].innerText = api2.forms[0].name.toUpperCase()
     imgPokemon[4].src = api2.sprites.other['official-artwork'].front_default;
+    pokemonType[0].innerText = (api2.types[0] && api2.types[1]) ? `${api2.types[0].type.name} / ${api2.types[1].type.name}`.toLocaleUpperCase() : api2.types[0].type.name.toLocaleUpperCase();
     valueHP[0].innerText = api2.stats[0].base_stat;
     valueAttack[0].innerText = api2.stats[1].base_stat;
     valueDefense[0].innerText = api2.stats[2].base_stat;
@@ -79,6 +83,7 @@ async function generateRandomPokemons() {
   thirdPokemon.addEventListener('click',  () => {
     namePokemon[0].innerText = api3.forms[0].name.toUpperCase()
     imgPokemon[4].src = api3.sprites.other['official-artwork'].front_default;
+    pokemonType[0].innerText = (api3.types[0] && api3.types[1]) ? `${api3.types[0].type.name} / ${api3.types[1].type.name}`.toLocaleUpperCase() : api3.types[0].type.name.toLocaleUpperCase();
     valueHP[0].innerText = api3.stats[0].base_stat;
     valueAttack[0].innerText = api3.stats[1].base_stat;
     valueDefense[0].innerText = api3.stats[2].base_stat;
@@ -89,6 +94,7 @@ async function generateRandomPokemons() {
   fourthPokemon.addEventListener('click',  () => {
     namePokemon[0].innerText = api4.forms[0].name.toUpperCase()
     imgPokemon[4].src = api4.sprites.other['official-artwork'].front_default;
+    pokemonType[0].innerText = (api4.types[0] && api4.types[1]) ? `${api4.types[0].type.name} / ${api4.types[1].type.name}`.toLocaleUpperCase() : api4.types[0].type.name.toLocaleUpperCase();
     valueHP[0].innerText = api4.stats[0].base_stat;
     valueAttack[0].innerText = api4.stats[1].base_stat;
     valueDefense[0].innerText = api4.stats[2].base_stat;
@@ -102,45 +108,61 @@ async function randomCardMachine() {
   const pokemonMachine = await URL_Fetch_Api(generateRandomNumber());
   namePokemon[1].innerText = pokemonMachine.forms[0].name.toUpperCase();
   imgPokemon[5].src = pokemonMachine.sprites.other['official-artwork'].front_default;
+  pokemonType[1].innerText = (pokemonMachine.types[0] && pokemonMachine.types[1]) ? `${pokemonMachine.types[0].type.name} / ${pokemonMachine.types[1].type.name}`.toLocaleUpperCase() : pokemonMachine.types[0].type.name.toLocaleUpperCase();
   valueHP[1].innerText = pokemonMachine.stats[0].base_stat;
   valueAttack[1].innerText = pokemonMachine.stats[1].base_stat;
   valueDefense[1].innerText = pokemonMachine.stats[2].base_stat;
   valueSpeed[1].innerText = pokemonMachine.stats[5].base_stat;
 }
-let player = '';
-let machine = '';
+
 
 function resultBattle(player, machine) {
-  if (player > machine) {
-    alert('testou');
-  // const draw = document.createElement('div');
-  // draw.className = 'resultDraw'
-  // draw.style.position = 'absolut';
-}
-  // player.innerText > machine.innerText
-  // player.innerText < machine.innerText
+  bannerResult.innerHTML = '';
+  const div = document.createElement('div');
+  bannerResult.appendChild(div);
+  const p = document.createElement('p');
+  div.appendChild(p);
+    if (player > machine) {
+      div.className = 'result-win'
+      p.innerHTML = 'Player Ganhou'
+  } else if (machine > player) {
+    div.className = 'result-lose'
+    p.innerHTML = 'Maquina Ganhou'
+  }else {
+    div.className = 'result-draw'
+    p.innerHTML = 'Houve um empate!!'
+  }
+  const button = document.createElement('button');
+  button.innerHTML = 'Restart Battle';
+  div.appendChild(button);
+  buttonBattle.disabled = true;
+  button.addEventListener('click', () => {
+    window.location.reload();
+  });
 }
 
-function chosenAtribute() {
-  selecAtributeHP.addEventListener('click', () => {
-    valueHP[0].className = 'select1';
-    valueHP[1].className = 'select2';
-    console.log('oi');
-    player = valueHP[0].innerText;
-    machine = valueHP[1].innerText; 
-  });
-  selecAtributeAtk.addEventListener('click', resultBattle);
-  selectAtributeDefense.addEventListener('click', resultBattle);
-  selectAtributeSpeed.addEventListener('click', () => {
-    console.log('teste');
-  });
-}
 
 async function startBattle() {
-  const sectionCards = document.querySelectorAll('.remove-card');
+  await randomCardMachine();
+    if (selecAtributeHP.checked) {
+      resultBattle(valueHP[0].innerText, valueHP[1].innerText);
+      const sectionCards = document.querySelectorAll('.remove-card');
     sectionCards.forEach(element => element.classList.remove('remove-card'));
-  chosenAtribute();
-  randomCardMachine();
+    }  else if (selecAtributeAtk.checked) {
+      resultBattle(valueAttack[0].innerText, valueAttack[1].innerText);
+      const sectionCards = document.querySelectorAll('.remove-card');
+    sectionCards.forEach(element => element.classList.remove('remove-card'));
+    } else if (selectAtributeDefense.checked) {
+      resultBattle(valueDefense[0].innerText, valueDefense[1].innerText);
+      const sectionCards = document.querySelectorAll('.remove-card');
+    sectionCards.forEach(element => element.classList.remove('remove-card'));
+    } else if (selectAtributeSpeed.checked) {
+      resultBattle(valueSpeed[0].innerText, valueSpeed[1].innerText);
+      const sectionCards = document.querySelectorAll('.remove-card');
+    sectionCards.forEach(element => element.classList.remove('remove-card'));
+    }  else {
+      alert('selecione um atributo!');
+    }
 }
 
 buttonBattle.addEventListener('click', startBattle);
