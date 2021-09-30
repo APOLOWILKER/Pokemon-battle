@@ -45,8 +45,12 @@ const URL_Fetch_Api =  async (pokemon) => {
 }; // retorna a promisse onde posso achar as img e os 'stats' onde posso achar HP e outros
 
 // Mostra logo abaixo do header o nome do pokemon selecionado
-const showSelectedPokemon = (pokemonName) => {
+const showSelectedPokemonName = (pokemonName) => {
   sectionNameSelectedPokemon.innerText = pokemonName;
+}
+
+const unShowSelectedPokemonName = () => {
+  sectionNameSelectedPokemon.innerText = '';
 }
 
 generateRandomNumber = () => {
@@ -87,7 +91,7 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api.stats[1].base_stat;
     valueDefense[0].innerText = api.stats[2].base_stat;
     valueSpeed[0].innerText = api.stats[5].base_stat;
-    showSelectedPokemon(api.forms[0].name.toUpperCase())
+    showSelectedPokemonName(api.forms[0].name.toUpperCase())
   });
   const api2 = await URL_Fetch_Api(generateRandomNumber());
   secondPokemon.src = api2.sprites.front_default;
@@ -99,7 +103,7 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api2.stats[1].base_stat;
     valueDefense[0].innerText = api2.stats[2].base_stat;
     valueSpeed[0].innerText = api2.stats[5].base_stat;
-    showSelectedPokemon(api2.forms[0].name.toUpperCase())
+    showSelectedPokemonName(api2.forms[0].name.toUpperCase())
 
   });
   const api3 = await URL_Fetch_Api(generateRandomNumber());
@@ -112,7 +116,7 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api3.stats[1].base_stat;
     valueDefense[0].innerText = api3.stats[2].base_stat;
     valueSpeed[0].innerText = api3.stats[5].base_stat;
-    showSelectedPokemon(api3.forms[0].name.toUpperCase())
+    showSelectedPokemonName(api3.forms[0].name.toUpperCase())
 
   });
   const api4 = await URL_Fetch_Api(generateRandomNumber());
@@ -125,7 +129,7 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api4.stats[1].base_stat;
     valueDefense[0].innerText = api4.stats[2].base_stat;
     valueSpeed[0].innerText = api4.stats[5].base_stat;
-    showSelectedPokemon(api4.forms[0].name.toUpperCase())
+    showSelectedPokemonName(api4.forms[0].name.toUpperCase())
 
   });
 }
@@ -171,6 +175,7 @@ function resultBattle(player, machine) {
 
 
 async function startBattle() {
+  unShowSelectedPokemonName();
   await randomCardMachine();
   const selected = document.querySelector('.selected');
   if (selected) {
