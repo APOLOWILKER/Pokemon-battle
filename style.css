@@ -283,7 +283,7 @@ div.container-stats-values {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
   margin: 0;
   top: 0;
   left: 0;
@@ -291,50 +291,26 @@ div.container-stats-values {
 }
 
 #popout-container {
-  background-color: rgb(238, 226, 226);
-  background-image: url('imagens/coracao.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: ridge rgb(0, 0, 0) 2px;
-  border-radius: 15px;
-  width: 40%;
-  margin: auto;
+  background-color: rgb(37, 38, 38);
+  border-radius: 50%;
+  width: 300px;
+  margin: 150px auto;
   height: 300px;
   padding:0px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 10px 10px 15px rgb(163, 158, 158);
+  box-shadow: 5px 5px 15px rgb(22, 22, 22);
   animation: go-back 1s infinite alternate;
   animation-fill-mode: forwards;
 }
 
 
 #div-texto {  
-  color: rgb(36, 15, 15);
-  margin: 0 0 ;
-  font-size: 35px;
+  color: rgb(247, 241, 241);
+  margin: 12% ;
+  font-size: 30px;
+  font-weight: bolder;
   font-family: 'Courier New', Courier, monospace;
-  text-shadow: 10px -10px 8px #4d4a47;
 }
 
-#div-x {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(255, 255, 255);
-  width: 15px;
-  height: 15px;
-  padding: 15px;
-  border-radius: 50%;
-  color: black;
-  position: absolute;
-  top: 10cm;
-  right: 18cm;
-  font-size: 20px;
-  font-family: 'Courier New', Courier, monospace;
-  cursor: pointer;
-  animation: go-back2 1s infinite alternate;
-  animation-delay: 1s;
-}

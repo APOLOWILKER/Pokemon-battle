@@ -34,19 +34,15 @@ const makePopout = () => {
   const divMaior = document.createElement('div');
   const divContainer = document.createElement('div');
   const divTexto = document.createElement('div');
-  const divX = document.createElement('div');
   divMaior.id = 'div-maior';
   divContainer.id = 'popout-container';
   divTexto.id = 'div-texto';
-  divX.id = 'div-x';
-  divTexto.innerText = 'Você Não Escolheu o Pokemon!'
-  divX.innerText = 'X';  
+  divTexto.innerText = 'Escolha um Pokemon!'
   document.querySelector('body').append(divMaior);
   divMaior.appendChild(divContainer);
-  divMaior.appendChild(divX)
   divContainer.appendChild(divTexto);
   divMaior.addEventListener('click', (e) => {
-    if (e.target.id === 'div-x' || e.target.id ==='div-maior') {
+    if (e.target.id ==='div-maior') {
       divMaior.remove();
       console.log(e.target);
     }
@@ -57,19 +53,15 @@ const makePopout2 = () => {
   const divMaior = document.createElement('div');
   const divContainer = document.createElement('div');
   const divTexto = document.createElement('div');
-  const divX = document.createElement('div');
   divMaior.id = 'div-maior';
   divContainer.id = 'popout-container';
   divTexto.id = 'div-texto';
-  divX.id = 'div-x';
-  divTexto.innerText = 'Você não Escolheu o Atributo!'
-  divX.innerText = 'X';  
+  divTexto.innerText = 'Escolha um Atributo!'
   document.querySelector('body').append(divMaior);
   divMaior.appendChild(divContainer);
-  divMaior.appendChild(divX)
   divContainer.appendChild(divTexto);
   divMaior.addEventListener('click', (e) => {
-    if (e.target.id === 'div-x' || e.target.id ==='div-maior') {
+    if (e.target.id ==='div-maior') {
       divMaior.remove();
       console.log(e.target);
     }
@@ -216,7 +208,7 @@ function loadPoints() {
 function createBlockDiv() {
   const blockDiv = document.createElement('div');
   blockDiv.className = 'block-div';
-  document.querySelector('body').insertBefore(blockDiv, document.querySelector('header'))
+  document.querySelector('body').insertBefore(blockDiv, document.querySelector('header'));
 }
 
 
