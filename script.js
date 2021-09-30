@@ -21,6 +21,7 @@ const pokemonType = document.querySelectorAll('.types');
 const bannerResult = document.querySelector('.container-stats-names')
 const sectionSelectedPokemonName = document.querySelector('#selected-pokemon');
 const sectionSelectedAttributeName = document.querySelector('#selected-attribute');
+const sectionsTitle = document.querySelector('h3.size');
 
 function addSelectedClass(event) {
   const selected = document.querySelector('.selected');
@@ -56,6 +57,12 @@ const unShowSelectedPokemonName = () => {
 
 const showSelectedAtribute = (atributeName) => {
   sectionSelectedAttributeName.innerText = `<< ${atributeName} >>`;
+}
+
+const changeTitleText = () => {
+  sectionsTitle.innerText = 'Escolha o seu Atributo ⬇️';
+  document.querySelector('.display-none').classList.remove('display-none');
+  
 }
 
 generateRandomNumber = () => {
@@ -96,7 +103,8 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api.stats[1].base_stat;
     valueDefense[0].innerText = api.stats[2].base_stat;
     valueSpeed[0].innerText = api.stats[5].base_stat;
-    showSelectedPokemonName(api.forms[0].name.toUpperCase())
+    showSelectedPokemonName(api.forms[0].name.toUpperCase());
+    changeTitleText();
   });
   const api2 = await URL_Fetch_Api(generateRandomNumber());
   secondPokemon.src = api2.sprites.front_default;
@@ -108,8 +116,8 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api2.stats[1].base_stat;
     valueDefense[0].innerText = api2.stats[2].base_stat;
     valueSpeed[0].innerText = api2.stats[5].base_stat;
-    showSelectedPokemonName(api2.forms[0].name.toUpperCase())
-
+    showSelectedPokemonName(api2.forms[0].name.toUpperCase());
+    changeTitleText();
   });
   const api3 = await URL_Fetch_Api(generateRandomNumber());
   thirdPokemon.src = api3.sprites.front_default;
@@ -121,8 +129,8 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api3.stats[1].base_stat;
     valueDefense[0].innerText = api3.stats[2].base_stat;
     valueSpeed[0].innerText = api3.stats[5].base_stat;
-    showSelectedPokemonName(api3.forms[0].name.toUpperCase())
-
+    showSelectedPokemonName(api3.forms[0].name.toUpperCase());
+    changeTitleText();
   });
   const api4 = await URL_Fetch_Api(generateRandomNumber());
   fourthPokemon.src = api4.sprites.front_default;
@@ -134,8 +142,8 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api4.stats[1].base_stat;
     valueDefense[0].innerText = api4.stats[2].base_stat;
     valueSpeed[0].innerText = api4.stats[5].base_stat;
-    showSelectedPokemonName(api4.forms[0].name.toUpperCase())
-
+    showSelectedPokemonName(api4.forms[0].name.toUpperCase());
+    changeTitleText();
   });
 }
 generateRandomPokemons();

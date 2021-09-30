@@ -100,7 +100,11 @@ section.box-card {
 }
 
 .remove-card {
-  /* display: none; */
+  display: none;
+}
+
+.display-none {
+  display: none;
 }
 
 .size {
