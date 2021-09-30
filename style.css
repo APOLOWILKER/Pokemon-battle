@@ -22,7 +22,29 @@ header .img-pokemon {
 .card img{
   height: 75px;
   width: 80px;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
 }
+
+.selected {
+  background-color: rgba(0, 153, 255, 0.664);
+  border-radius: 50%;
+  border: 2px solid rgba(29, 24, 24, 0);
+  animation: fade 2s forwards;
+}
+
+.card img:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fade {
+  0% {
+    border: 8px solid rgb(209, 29, 29);
+  } 100% {
+    border: 10px solid rgb(18, 167, 50);
+  }
+}
+
 
 /* selecionando o status */
 
@@ -35,20 +57,13 @@ section.container-stats-names {
   justify-content: center;
 }
 
-.container-text h3 {
-  font-size: 30px;
-  margin: 10px auto 10px auto;
-  text-align: center;
-  font-weight: bolder;
-  color: aliceblue;
-  text-shadow: -3px 3px 5px black;
-}
 
-.select-satats {
+.select-stats {
   display: flex;
   justify-content: center;
   flex-grow: 2;
-  font-size: 18px;
+  margin-top: 10px;
+  font-size: 20px;
   font-weight: bolder;
   color: rgb(0, 0, 0);
   text-shadow: -3px 3px 5px rgb(216, 212, 212);
@@ -99,7 +114,15 @@ section.box-card {
 }
 
 .size {
-  font-size: 22px;
+  font-size: 30px;
+  text-align: center;
+  padding: 2px;
+  color: aliceblue;
+  text-shadow: -3px 3px 5px black;
+}
+
+.size-name-pokemon {
+  font-size: 20px;
   text-align: center;
   padding: 2px;
   color: aliceblue;
@@ -114,7 +137,7 @@ section.box-card {
   width: 135px;
   display: flex;
   justify-content: space-around;
-  margin: 8px 10px;
+  margin: 8px auto;
   align-items: center;
   border-radius: 3px;
   box-shadow: 3px 3px 15px black;
@@ -180,5 +203,6 @@ div.container-stats-values {
   background-color: rgba(157, 68, 230, 0.932);;
   font-weight: bolder;
   font-size: 16px;
+  cursor: pointer;
 }
 
