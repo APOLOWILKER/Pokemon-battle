@@ -345,3 +345,10 @@ div.container-stats-values {
   font-family: 'Courier New', Courier, monospace;
 }
 
+
+@media screen and (max-width: 600px) {
+  .card img {
+    width: 70%;
+    height: 100%;
+  }
+}
