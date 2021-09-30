@@ -54,9 +54,10 @@ section.container-stats-names {
   text-shadow: -3px 3px 5px rgb(216, 212, 212);
 }
 
-label.space-satates {
-  margin: 0 70px;
-  font-size: medium;
+.space-states {
+  /* border: 3px solid red; */
+  margin: 0 8px;
+  font-size: 18px;
   font-weight: bolder;
 }
 

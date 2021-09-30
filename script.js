@@ -182,7 +182,7 @@ async function startBattle() {
       alert('selecione um atributo!');
     }
   } else {
-   alert('Selecione o POKEMON!')
+    alert('Selecione o POKEMON!')
   }
 }
 
