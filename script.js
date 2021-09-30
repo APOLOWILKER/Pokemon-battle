@@ -149,7 +149,7 @@ async function randomCardMachine() {
 
 
 function resultBattle(player, machine) {
-  unShowSelectedPokemonName();
+  bannerResult.innerHTML = '';
   const div = document.createElement('div');
   bannerResult.appendChild(div);
   const p = document.createElement('p');

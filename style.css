@@ -22,7 +22,7 @@ header .img-pokemon {
 .selected-pokemon {
   font-family: Arial, sans-serif;
   color: rgba(113, 247, 222, 0.653);
-  font-size: 40px;
+  font-size: 30px;
 
   display: flex;
   position: absolute;
