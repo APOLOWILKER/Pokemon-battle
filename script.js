@@ -2,7 +2,7 @@ const firstPokemon = document.querySelector('.first-pokemon');
 const secondPokemon = document.querySelector('.second-pokemon')
 const thirdPokemon = document.querySelector('.third-pokemon');
 const fourthPokemon = document.querySelector('.fourth-pokemon');
-const selectPokemon = document.querySelectorAll('.Pokemon');
+// const selectPokemon = document.querySelectorAll('.Pokemon');
 const mainCards = document.querySelector('.container-cards');
 const buttonBattle = document.querySelector('.button-style');
 // document.querySelectorAll('.box-card')[0].classList.add('remove-card');
@@ -19,6 +19,7 @@ const selectAtributeDefense = document.querySelector('#defense-selected');
 const selectAtributeSpeed = document.querySelector('#speed-selected');
 const pokemonType = document.querySelectorAll('.types');
 const bannerResult = document.querySelector('.container-stats-names')
+const sectionNameSelectedPokemon = document.querySelector('.selected-pokemon');
 
 function addSelectedClass(event) {
   const selected = document.querySelector('.selected');
@@ -43,6 +44,10 @@ const URL_Fetch_Api =  async (pokemon) => {
   return returnConst;
 }; // retorna a promisse onde posso achar as img e os 'stats' onde posso achar HP e outros
 
+// Mostra logo abaixo do header o nome do pokemon selecionado
+const showSelectedPokemon = (pokemonName) => {
+  sectionNameSelectedPokemon.innerText = pokemonName;
+}
 
 generateRandomNumber = () => {
   const arra = [];
@@ -82,6 +87,7 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api.stats[1].base_stat;
     valueDefense[0].innerText = api.stats[2].base_stat;
     valueSpeed[0].innerText = api.stats[5].base_stat;
+    showSelectedPokemon(api.forms[0].name.toUpperCase())
   });
   const api2 = await URL_Fetch_Api(generateRandomNumber());
   secondPokemon.src = api2.sprites.front_default;
@@ -93,6 +99,8 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api2.stats[1].base_stat;
     valueDefense[0].innerText = api2.stats[2].base_stat;
     valueSpeed[0].innerText = api2.stats[5].base_stat;
+    showSelectedPokemon(api2.forms[0].name.toUpperCase())
+
   });
   const api3 = await URL_Fetch_Api(generateRandomNumber());
   thirdPokemon.src = api3.sprites.front_default;
@@ -104,6 +112,8 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api3.stats[1].base_stat;
     valueDefense[0].innerText = api3.stats[2].base_stat;
     valueSpeed[0].innerText = api3.stats[5].base_stat;
+    showSelectedPokemon(api3.forms[0].name.toUpperCase())
+
   });
   const api4 = await URL_Fetch_Api(generateRandomNumber());
   fourthPokemon.src = api4.sprites.front_default;
@@ -115,6 +125,8 @@ async function generateRandomPokemons() {
     valueAttack[0].innerText = api4.stats[1].base_stat;
     valueDefense[0].innerText = api4.stats[2].base_stat;
     valueSpeed[0].innerText = api4.stats[5].base_stat;
+    showSelectedPokemon(api4.forms[0].name.toUpperCase())
+
   });
 }
 generateRandomPokemons();

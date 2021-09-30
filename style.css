@@ -19,6 +19,17 @@ header .img-pokemon {
   flex: 1 1 auto;
 }
 
+.selected-pokemon {
+  font-family: Arial, sans-serif;
+  color: rgba(113, 247, 222, 0.653);
+  font-size: 40px;
+
+  display: flex;
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+}
+
 .card img{
   height: 75px;
   width: 80px;
@@ -28,11 +39,12 @@ header .img-pokemon {
 
 section.container-stats-names {
   margin: 30px;
-  height: 100px;
+  height: 50px;
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
+  paf
 }
 
 .container-text h3 {
