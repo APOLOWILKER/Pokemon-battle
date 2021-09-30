@@ -150,6 +150,7 @@ function resultBattle(player, machine) {
   }
   const button = document.createElement('button');
   button.innerHTML = 'Restart Battle';
+  button.className = 'button-style';
   div.appendChild(button);
   buttonBattle.disabled = true;
   button.addEventListener('click', () => {
