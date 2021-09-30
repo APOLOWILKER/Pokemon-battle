@@ -19,7 +19,8 @@ const selectAtributeDefense = document.querySelector('#defense-selected');
 const selectAtributeSpeed = document.querySelector('#speed-selected');
 const pokemonType = document.querySelectorAll('.types');
 const bannerResult = document.querySelector('.container-stats-names')
-const sectionNameSelectedPokemon = document.querySelector('.selected-pokemon');
+const sectionSelectedPokemonName = document.querySelector('#selected-pokemon');
+const sectionSelectedAttributeName = document.querySelector('#selected-attribute');
 
 function addSelectedClass(event) {
   const selected = document.querySelector('.selected');
@@ -46,11 +47,15 @@ const URL_Fetch_Api =  async (pokemon) => {
 
 // Mostra logo abaixo do header o nome do pokemon selecionado
 const showSelectedPokemonName = (pokemonName) => {
-  sectionNameSelectedPokemon.innerText = pokemonName;
+  sectionSelectedPokemonName.innerText = `<< ${pokemonName} >>`;
 }
 
 const unShowSelectedPokemonName = () => {
-  sectionNameSelectedPokemon.innerText = '';
+  sectionSelectedPokemonName.innerText = '';
+}
+
+const showSelectedAtribute = (atributeName) => {
+  sectionSelectedAttributeName.innerText = `<< ${atributeName} >>`;
 }
 
 generateRandomNumber = () => {
@@ -182,19 +187,23 @@ async function startBattle() {
     if (selecAtributeHP.checked) {
       resultBattle(valueHP[0].innerText, valueHP[1].innerText);
       const sectionCards = document.querySelectorAll('.remove-card');
-    sectionCards.forEach(element => element.classList.remove('remove-card'));
+      sectionCards.forEach(element => element.classList.remove('remove-card'));
+      showSelectedAtribute('HP');
     }  else if (selecAtributeAtk.checked) {
       resultBattle(valueAttack[0].innerText, valueAttack[1].innerText);
       const sectionCards = document.querySelectorAll('.remove-card');
-    sectionCards.forEach(element => element.classList.remove('remove-card'));
+      sectionCards.forEach(element => element.classList.remove('remove-card'));
+      showSelectedAtribute('ATTACK');
     } else if (selectAtributeDefense.checked) {
       resultBattle(valueDefense[0].innerText, valueDefense[1].innerText);
       const sectionCards = document.querySelectorAll('.remove-card');
-    sectionCards.forEach(element => element.classList.remove('remove-card'));
+      sectionCards.forEach(element => element.classList.remove('remove-card'));
+      showSelectedAtribute('DEFENSE');
     } else if (selectAtributeSpeed.checked) {
       resultBattle(valueSpeed[0].innerText, valueSpeed[1].innerText);
       const sectionCards = document.querySelectorAll('.remove-card');
-    sectionCards.forEach(element => element.classList.remove('remove-card'));
+      sectionCards.forEach(element => element.classList.remove('remove-card'));
+      showSelectedAtribute('SPEED');
     }  else {
       alert('selecione um atributo!');
     }

@@ -19,7 +19,7 @@ header .img-pokemon {
   flex: 1 1 auto;
 }
 
-.selected-pokemon {
+.text-style {
   font-family: Arial, sans-serif;
   color: rgba(113, 247, 222, 0.653);
   font-size: 30px;
@@ -28,6 +28,10 @@ header .img-pokemon {
   position: absolute;
   width: 100%;
   justify-content: center;
+}
+
+#selected-attribute {
+  margin-top: 70px;
 }
 
 .card img{
@@ -44,7 +48,6 @@ section.container-stats-names {
   display: flex;
   flex-direction: column;
   justify-content: top;
-  paf
 }
 
 .container-text h3 {
@@ -97,7 +100,7 @@ section.box-card {
 }
 
 .remove-card {
-  display: none;
+  /* display: none; */
 }
 
 .size {
