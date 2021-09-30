@@ -32,8 +32,34 @@ function addSelectedClass(event) {
   }
 }
 
+function popOutRefresh() {
+  const divMaior = document.createElement('div');
+  const divContainer = document.createElement('div');
+  const divTexto = document.createElement('div');
+  divMaior.id = 'div-maior';
+  divContainer.id = 'popout-container';
+  divTexto.id = 'div-texto';
+  divTexto.innerText = 'Limite de atualizações atingido'
+  document.querySelector('body').append(divMaior);
+  divMaior.appendChild(divContainer);
+  divContainer.appendChild(divTexto);
+  divMaior.addEventListener('click', () => {
+      divMaior.remove();
+  })
+}
+
+let refreshCount = 0;
+
 refreshPokemon.addEventListener('click', () => {
-    window.location.reload(false)
+  refreshCount += 1;
+  if ( refreshCount <= 3) {
+    generateRandomPokemons();
+  } else {
+    popOutRefresh()
+  }
+  
+  console.log(refreshCount)
+    // window.location.reload()
 });
 
 const makePopout = () => {
@@ -47,12 +73,9 @@ const makePopout = () => {
   document.querySelector('body').append(divMaior);
   divMaior.appendChild(divContainer);
   divContainer.appendChild(divTexto);
-  divMaior.addEventListener('click', (e) => {
-    if (e.target.id ==='div-maior') {
-      divMaior.remove();
-      console.log(e.target);
-    }
-  })
+  divMaior.addEventListener('click', () => {
+    divMaior.remove();
+})
 }
 
 const makePopout2 = () => {
@@ -66,12 +89,9 @@ const makePopout2 = () => {
   document.querySelector('body').append(divMaior);
   divMaior.appendChild(divContainer);
   divContainer.appendChild(divTexto);
-  divMaior.addEventListener('click', (e) => {
-    if (e.target.id ==='div-maior') {
-      divMaior.remove();
-      console.log(e.target);
-    }
-  })
+  divMaior.addEventListener('click', () => {
+    divMaior.remove();
+})
 }
 
 
