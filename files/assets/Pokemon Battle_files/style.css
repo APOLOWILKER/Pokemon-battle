@@ -22,21 +22,7 @@ header .img-pokemon {
 
 .align-refresh {
   align-self: center;
-}
 
-.align-refresh button {
-  background-image: url(./files/assets/refresh-image-removebg.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 20px;
-  padding: 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(157, 68, 230, 0.932);;
-  font-weight: bolder;
-  font-size: 12px;
-  cursor: pointer;
-  margin-bottom: 10px;
 }
 
 .card img{

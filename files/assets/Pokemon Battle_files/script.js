@@ -19,8 +19,6 @@ const pokemonType = document.querySelectorAll('.types');
 const bannerResult = document.querySelector('.container-stats-names');
 const pointPlayer = document.querySelector('#player-point');
 const pointMachine = document.querySelector('#machine-point');
-const refreshPokemon = document.querySelector('#refresh');
-
 
 function addSelectedClass(event) {
   const selected = document.querySelector('.selected');
@@ -31,36 +29,6 @@ function addSelectedClass(event) {
     event.target.classList.add('selected');
   }
 }
-
-function popOutRefresh() {
-  const divMaior = document.createElement('div');
-  const divContainer = document.createElement('div');
-  const divTexto = document.createElement('div');
-  divMaior.id = 'div-maior';
-  divContainer.id = 'popout-container';
-  divTexto.id = 'div-texto';
-  divTexto.innerText = 'Limite de atualizações atingido'
-  document.querySelector('body').append(divMaior);
-  divMaior.appendChild(divContainer);
-  divContainer.appendChild(divTexto);
-  divMaior.addEventListener('click', () => {
-      divMaior.remove();
-  })
-}
-
-let refreshCount = 0;
-
-refreshPokemon.addEventListener('click', () => {
-  refreshCount += 1;
-  if ( refreshCount <= 3) {
-    generateRandomPokemons();
-  } else {
-    popOutRefresh()
-  }
-  
-  console.log(refreshCount)
-    // window.location.reload()
-});
 
 const makePopout = () => {
   const divMaior = document.createElement('div');
@@ -73,9 +41,12 @@ const makePopout = () => {
   document.querySelector('body').append(divMaior);
   divMaior.appendChild(divContainer);
   divContainer.appendChild(divTexto);
-  divMaior.addEventListener('click', () => {
-    divMaior.remove();
-})
+  divMaior.addEventListener('click', (e) => {
+    if (e.target.id ==='div-maior') {
+      divMaior.remove();
+      console.log(e.target);
+    }
+  })
 }
 
 const makePopout2 = () => {
@@ -89,9 +60,12 @@ const makePopout2 = () => {
   document.querySelector('body').append(divMaior);
   divMaior.appendChild(divContainer);
   divContainer.appendChild(divTexto);
-  divMaior.addEventListener('click', () => {
-    divMaior.remove();
-})
+  divMaior.addEventListener('click', (e) => {
+    if (e.target.id ==='div-maior') {
+      divMaior.remove();
+      console.log(e.target);
+    }
+  })
 }
 
 
@@ -212,7 +186,6 @@ function resultBattle(player, machine, elementP, elementM) {
     elementP.style.backgroundColor = 'blue';
     elementM.style.backgroundColor = 'blue';
   }
-
   const button = document.createElement('button');
   button.innerHTML = 'Restart Battle';
   button.className = 'button-style';
