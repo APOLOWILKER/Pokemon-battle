@@ -19,7 +19,7 @@ header .img-pokemon {
   flex: 1 1 auto;
 }
 
-.text-style {
+.text-style-0 {
   font-family: Arial, sans-serif;
   color: rgba(113, 247, 222, 0.653);
   font-size: 30px;
@@ -175,7 +175,14 @@ div.container-stats-values {
 }
  /* button */
 
-.move-button {
+.battle-button {
+  display: flex;
+  margin: 10px 1px 0 1px;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-button {
   display: flex;
   margin: 10px 1px 0 1px;
   justify-content: center;
@@ -191,3 +198,21 @@ div.container-stats-values {
   font-size: 16px;
 }
 
+.result-win {
+  font-family:Impact, sans-serif;
+  font-style: inherit;
+  color: rgb(240, 255, 242);
+}
+
+.result-lose {
+  font-family:Impact, sans-serif;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  height: 10px;
+  padding-bottom: 10px;
+}
+
+.result-draw {
+  font-family:Impact, sans-serif;
+  color: rgb(240, 255, 242);
+}

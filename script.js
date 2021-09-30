@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const firstPokemon = document.querySelector('.first-pokemon');
 const secondPokemon = document.querySelector('.second-pokemon')
 const thirdPokemon = document.querySelector('.third-pokemon');
@@ -167,20 +168,29 @@ function resultBattle(player, machine) {
   bannerResult.appendChild(div);
   const p = document.createElement('p');
   div.appendChild(p);
+
     if (player > machine) {
-      div.className = 'result-win'
-      p.innerHTML = 'Player Ganhou'
+      p.className = 'result-win'
+      p.innerHTML = 'Player Ganhou ✅'
   } else if (machine > player) {
-    div.className = 'result-lose'
-    p.innerHTML = 'Maquina Ganhou'
+    p.className = 'result-lose'
+    p.innerHTML = 'Maquina Ganhou... ⛔️'
   }else {
-    div.className = 'result-draw'
-    p.innerHTML = 'Houve um empate!!'
+    p.className = 'result-draw'
+    p.innerHTML = 'Houve um empate!! 🥶'
   }
+
   const button = document.createElement('button');
   button.innerHTML = 'Restart Battle';
-  div.appendChild(button);
+  button.className = 'button-style';
+
+  const div2 = document.createElement('div');
+  div2.className = 'reset-button';
+  div2.appendChild(button);
+  body.appendChild(div2);
+
   buttonBattle.disabled = true;
+
   button.addEventListener('click', () => {
     window.location.reload();
   });
@@ -215,6 +225,9 @@ async function startBattle() {
     }  else {
       alert('selecione um atributo!');
     }
+    
+    buttonBattle.classList.add('display-none')
+    
   } else {
     alert('Selecione o POKEMON!')
   }
