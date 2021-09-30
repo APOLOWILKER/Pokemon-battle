@@ -165,8 +165,9 @@ section.box-card {
 
 div.container-stats-values {
   display: flex;
-  margin: 8px 6px;
-  padding: 3px;
+  margin: 10px auto;
+  width: 90%;
+  padding: 2px;
   border-radius: 5px;
   flex-wrap: wrap;
   justify-content: space-around;
