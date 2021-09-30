@@ -20,6 +20,22 @@ const selectAtributeSpeed = document.querySelector('#speed-selected');
 const pokemonType = document.querySelectorAll('.types');
 const bannerResult = document.querySelector('.container-stats-names')
 
+function addSelectedClass(event) {
+  const selected = document.querySelector('.selected');
+  if (selected) {
+    selected.classList.remove('selected');
+    event.target.classList.add('selected');
+  } else {
+    event.target.classList.add('selected');
+  }
+}
+
+firstPokemon.addEventListener('click', addSelectedClass);
+secondPokemon.addEventListener('click', addSelectedClass);
+thirdPokemon.addEventListener('click', addSelectedClass);
+fourthPokemon.addEventListener('click', addSelectedClass);
+
+
 
 const URL_Fetch_Api =  async (pokemon) => { 
   const returnConst = fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
@@ -144,6 +160,8 @@ function resultBattle(player, machine) {
 
 async function startBattle() {
   await randomCardMachine();
+  const selected = document.querySelector('.selected');
+  if (selected) {
     if (selecAtributeHP.checked) {
       resultBattle(valueHP[0].innerText, valueHP[1].innerText);
       const sectionCards = document.querySelectorAll('.remove-card');
@@ -163,6 +181,9 @@ async function startBattle() {
     }  else {
       alert('selecione um atributo!');
     }
+  } else {
+   alert('Selecione o POKEMON!')
+  }
 }
 
 buttonBattle.addEventListener('click', startBattle);
