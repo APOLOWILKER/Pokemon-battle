@@ -21,7 +21,6 @@ const pointPlayer = document.querySelector('#player-point');
 const pointMachine = document.querySelector('#machine-point');
 const refreshPokemon = document.querySelector('#refresh');
 
-
 function addSelectedClass(event) {
   const selected = document.querySelector('.selected');
   if (selected) {
@@ -50,16 +49,20 @@ function popOutRefresh() {
 
 let refreshCount = 0;
 
-refreshPokemon.addEventListener('click', () => {
+refreshPokemon.addEventListener('click', (event) => {
   refreshCount += 1;
+  const selected = document.querySelector('.selected');
   if ( refreshCount <= 3) {
     generateRandomPokemons();
+    if (selected) {
+      selected.classList.remove('selected');
+    }
   } else {
-    popOutRefresh()
+    popOutRefresh();    
+    if (selected) {
+      selected.classList.remove('selected');
+    }
   }
-  
-  console.log(refreshCount)
-    // window.location.reload()
 });
 
 const makePopout = () => {
@@ -262,11 +265,9 @@ async function startBattle() {
       sectionCards.forEach(element => element.classList.remove('remove-card'));
     }  else {
       makePopout2() 
-      // alert('Selecione um Atributo!');
     }
   } else {
     makePopout()
-    // alert('Selecione o POKEMON!')
   }
   
 }
