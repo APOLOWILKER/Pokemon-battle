@@ -1,4 +1,4 @@
-# Pokemon-battle
+# 🎮 Pokemon-battle
 Recriando uma batalha pokemon com CSS, HTML e JS.
 Projeto com finalidade de estudo dos conteudos aprendidos na TRYBE.
 
