@@ -1,5 +1,6 @@
 # 🎮 Pokemon-battle
-Recriando uma batalha pokemon com CSS, HTML e JS.
+
+🎮 Recriando uma batalha pokemon com CSS, HTML e JS.
 Projeto com finalidade de estudo dos conteudos aprendidos na TRYBE.
 
 Depois de fazer um exercicio manipulando HOFS, tive a ideia de fazer um 'GAME'!
