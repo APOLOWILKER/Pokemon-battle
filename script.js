@@ -124,10 +124,10 @@ generateRandomNumber = () => {
 
 async function generateRandomPokemons() {
   const api = await URL_Fetch_Api(generateRandomNumber());
-  firstPokemon.src = api.sprites.front_default;
+  firstPokemon.src = `./animations/${api.forms[0].name.toLowerCase()}.gif`;
   firstPokemon.addEventListener('click',  function pokemonA() {
     namePokemon[0].innerText = api.forms[0].name.toUpperCase()
-    imgPokemon[4].src = api.sprites.other['official-artwork'].front_default;
+    imgPokemon[4].src = `./animations/${api.forms[0].name.toLowerCase()}.gif`
     pokemonType[0].innerText = (api.types[0] && api.types[1]) ? `${api.types[0].type.name} / ${api.types[1].type.name}`.toLocaleUpperCase() : api.types[0].type.name.toLocaleUpperCase();
     valueHP[0].innerText = api.stats[0].base_stat;
     valueAttack[0].innerText = api.stats[1].base_stat;
@@ -136,10 +136,10 @@ async function generateRandomPokemons() {
   });
 
   const api2 = await URL_Fetch_Api(generateRandomNumber());
-  secondPokemon.src = api2.sprites.front_default;
+  secondPokemon.src = `./animations/${api2.forms[0].name.toLowerCase()}.gif`
   secondPokemon.addEventListener('click',  function pokemonB() {
     namePokemon[0].innerText = api2.forms[0].name.toUpperCase()
-    imgPokemon[4].src = api2.sprites.other['official-artwork'].front_default;
+    imgPokemon[4].src = `./animations/${api2.forms[0].name.toLowerCase()}.gif`
     pokemonType[0].innerText = (api2.types[0] && api2.types[1]) ? `${api2.types[0].type.name} / ${api2.types[1].type.name}`.toLocaleUpperCase() : api2.types[0].type.name.toLocaleUpperCase();
     valueHP[0].innerText = api2.stats[0].base_stat;
     valueAttack[0].innerText = api2.stats[1].base_stat;
@@ -148,10 +148,10 @@ async function generateRandomPokemons() {
   });
 
   const api3 = await URL_Fetch_Api(generateRandomNumber());
-  thirdPokemon.src = api3.sprites.front_default;
+  thirdPokemon.src = `./animations/${api3.forms[0].name.toLowerCase()}.gif`;
   thirdPokemon.addEventListener('click',  function pokemonC() {
     namePokemon[0].innerText = api3.forms[0].name.toUpperCase()
-    imgPokemon[4].src = api3.sprites.other['official-artwork'].front_default;
+    imgPokemon[4].src = `./animations/${api3.forms[0].name.toLowerCase()}.gif`;
     pokemonType[0].innerText = (api3.types[0] && api3.types[1]) ? `${api3.types[0].type.name} / ${api3.types[1].type.name}`.toLocaleUpperCase() : api3.types[0].type.name.toLocaleUpperCase();
     valueHP[0].innerText = api3.stats[0].base_stat;
     valueAttack[0].innerText = api3.stats[1].base_stat;
@@ -160,10 +160,10 @@ async function generateRandomPokemons() {
   });
 
   const api4 = await URL_Fetch_Api(generateRandomNumber());
-  fourthPokemon.src = api4.sprites.front_default;
+  fourthPokemon.src = `./animations/${api4.forms[0].name.toLowerCase()}.gif`
   fourthPokemon.addEventListener('click',  function pokemonD() {
     namePokemon[0].innerText = api4.forms[0].name.toUpperCase()
-    imgPokemon[4].src = api4.sprites.other['official-artwork'].front_default;
+    imgPokemon[4].src = `./animations/${api4.forms[0].name.toLowerCase()}.gif`
     pokemonType[0].innerText = (api4.types[0] && api4.types[1]) ? `${api4.types[0].type.name} / ${api4.types[1].type.name}`.toLocaleUpperCase() : api4.types[0].type.name.toLocaleUpperCase();
     valueHP[0].innerText = api4.stats[0].base_stat;
     valueAttack[0].innerText = api4.stats[1].base_stat;
@@ -177,7 +177,7 @@ generateRandomPokemons();
 async function randomCardMachine() {
   const pokemonMachine = await URL_Fetch_Api(generateRandomNumber());
   namePokemon[1].innerText = pokemonMachine.forms[0].name.toUpperCase();
-  imgPokemon[5].src = pokemonMachine.sprites.other['official-artwork'].front_default;
+  imgPokemon[5].src = `./animations/${pokemonMachine.forms[0].name.toLowerCase()}.gif`
   pokemonType[1].innerText = (pokemonMachine.types[0] && pokemonMachine.types[1]) ? `${pokemonMachine.types[0].type.name} / ${pokemonMachine.types[1].type.name}`.toLocaleUpperCase() : pokemonMachine.types[0].type.name.toLocaleUpperCase();
   valueHP[1].innerText = pokemonMachine.stats[0].base_stat;
   valueAttack[1].innerText = pokemonMachine.stats[1].base_stat;
