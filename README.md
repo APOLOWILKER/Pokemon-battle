@@ -1,18 +1,24 @@
 # 🎮 Pokemon-battle
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-🎮 Recriando uma batalha pokemon com CSS, HTML e JS.
-Projeto com finalidade de estudo dos conteudos aprendidos na TRYBE.
+Reference-style: 
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
+🎮 Recriando uma batalha pokemon com CSS, HTML e JS e a API pokeAPI :
+https://pokeapi.co/
+
+Durante a conclusão do primeiro modulo da Trybe eu resolvi fazer um projeto paralelo para treinar um pouco os conhecimentos que adquiri.
 
 Depois de fazer um exercicio manipulando HOFS, tive a ideia de fazer um 'GAME'!
 
-Sempre amei jogos de RPG ou que tem esse tema medieval, ou ate mesmo pokemon, no exercicio bônus, a proposta era para criar e gerar os valores de dano e ataque de uma dupla que enfretaria um dragão. 
+Sempre amei jogos de RPG ou que tem esse tema medieval, ou ate mesmo pokemon, no exercicio bônus, a proposta era para criar e gerar os valores de forma dinamica de dano e ataque de uma dupla que enfretaria um dragão.
+Infelizmente ainda não tive tempo de colocar isso em prática, mas logo logo realizo algo do tipo.
 
-Nesse projeto a ideia é criar cartas de pokemon que vão se enfrentar! Quem sera que vai vencer essa batalha?
+Nesse projeto a ideia é criar cartas de pokemon que vão se enfrentar! No estilo do SuperTrunfo.
+ Quem sera que vai vencer essa batalha?
 Cada jogador escohe 1 atibuto e a sua carta, e a batalha é iniciada, mostrando no final quem foi o ganhador!!
 
-Aparecendo um alert ou outra pagina mostrando o resultado, com um um botão de reinicio de partida;
 
-
-Orientações aos participantes:
- - depois de fazer o seu clone do projeto crie uma branch com seu nome e o nome do projeto!
- - Faça o pullRequest e vamos colaborando e conversando de acordo com o andamento do projeto!
