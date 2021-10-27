@@ -1,11 +1,5 @@
 # 🎮 Pokemon-battle
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-Reference-style: 
-![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+![alt text](https://github.com/APOLOWILKER/Pokemon-battle/blob/main/ezgif.com-gif-maker.gif)
 
 🎮 Recriando uma batalha pokemon com CSS, HTML e JS e a API pokeAPI :
 https://pokeapi.co/
